@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1 class="text-center mb-3">Poll Questions</h1>
+  {% if latest_question_list %}
+    {% for question in latest_question_list %}
+      <div class="card mb-3">
+        <div class="card-body">
+          <p class="lead">{{ question.question_text }}</p>
+          <a href="{% url 'polls:detail' question.id %}" class="btn btn-primary btn-sm">Vote Now</a>
+          <a href="{% url 'polls:results' question.id %}" class="btn btn-secondary btn-sm">Results</a>
+        </div>
+      </div>
+    {% endfor %}
+
+  {% endif %}
+
+  <!-- Hardcoded Polls for Testing -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="lead">YSRCP</p>
+      <a href="{% url 'polls:detail' 1 %}" class="btn btn-primary btn-sm">Vote Now</a>
+      <a href="{% url 'polls:results' 1 %}" class="btn btn-secondary btn-sm">Results</a>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="lead">TDP</p>
+      <a href="{% url 'polls:detail' 2 %}" class="btn btn-primary btn-sm">Vote Now</a>
+      <a href="{% url 'polls:results' 2 %}" class="btn btn-secondary btn-sm">Results</a>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="lead">JANASENA</p>
+      <a href="{% url 'polls:detail' 3 %}" class="btn btn-primary btn-sm">Vote Now</a>
+      <a href="{% url 'polls:results' 3 %}" class="btn btn-secondary btn-sm">Results</a>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="lead">BJP</p>
+      <a href="{% url 'polls:detail' 4 %}" class="btn btn-primary btn-sm">Vote Now</a>
+      <a href="{% url 'polls:results' 4 %}" class="btn btn-secondary btn-sm">Results</a>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="lead">CONGRESS</p>
+      <a href="{% url 'polls:detail' 5 %}" class="btn btn-primary btn-sm">Vote Now</a>
+      <a href="{% url 'polls:results' 5 %}" class="btn btn-secondary btn-sm">Results</a>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="lead">CPI</p>
+      <a href="{% url 'polls:detail' 6 %}" class="btn btn-primary btn-sm">Vote Now</a>
+      <a href="{% url 'polls:results' 6 %}" class="btn btn-secondary btn-sm">Results</a>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="lead">CPM</p>
+      <a href="{% url 'polls:detail' 7 %}" class="btn btn-primary btn-sm">Vote Now</a>
+      <a href="{% url 'polls:results' 7 %}" class="btn btn-secondary btn-sm">Results</a>
+    </div>
+  </div>
+{% endblock %}
